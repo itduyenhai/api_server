@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import config from '../config'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 import User from '../models/user'
 
 module.exports = {
