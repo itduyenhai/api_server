@@ -2,12 +2,13 @@ import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
 
 const UserSchema = mongoose.Schema({
-    email: { type: String },
-    password: { type: String },
-    // roles: [{ type: Schema.Types.ObjectId, ref: 'role' }],
+    username: { type: String, require: true },
+    email: { type: String, require: true },
+    password: { type: String, require: true },
     active: { type: Boolean, default: false },
-    signupDate: { type: Date, default: Date.now() },
-    signinDate: { tpye: Date }
+    created_at: { type: Date, default: Date.now() },
+    updated_at: { tpye: Date },
+    deleted_at: { tpye: Date }
 })
 
 UserSchema.pre('save', function(next) {

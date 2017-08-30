@@ -7,10 +7,11 @@ module.exports = {
     // Register
     signup: (req, res) => {
 
-        if (!req.body.email || !req.body.password) {
+        if (!req.body.username || !req.body.email || !req.body.password) {
             res.status(403).json({ message: 'Nhập thông tin tài khoản' })
         }
         const user = new User({
+            username: req.body.username,
             email: req.body.email,
             password: req.body.password
         })
