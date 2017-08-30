@@ -1,11 +1,13 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
+import uuidv4 from 'uuid/v4';
 
 const UserSchema = mongoose.Schema({
     username: { type: String, require: true },
     email: { type: String, require: true },
     password: { type: String, require: true },
     active: { type: Boolean, default: false },
+    secret: { type: String, default: uuidv4() },
     created_at: { type: Date, default: Date.now() },
     updated_at: { tpye: Date },
     deleted_at: { tpye: Date }
