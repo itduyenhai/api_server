@@ -24,10 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 mongoose.Promise = global.Promise
 mongoose.connect(config.DATABASE, { useMongoClient: true })
     .then(() => {
-        console.log('connected to mongodb')
+        console.log('Mongodb connect on: 12707')
     })
     .catch((error) => {
-        console.log('error connecting to db:')
+        console.log('Mongodb error')
     });
 
 // Use route
